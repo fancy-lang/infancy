@@ -61,11 +61,11 @@ Multiple arguments:
 
     object foo: arg1 bar: arg2 baz: arg3
 
-The above shows a message send with 3 arguments for the `foo:bar:baz:`
-message. If `object` or its class define a method with the same name,
-it will get executed with the given arguments. If not, it will look
-for a method called `unkown_message:params:` within `object`s
-inheritance chain (as with Ruby's `method_missing`).
+The above shows a message send with three arguments for the
+`foo:bar:baz:` message. If `object` or its class define a method with
+the same name, it will get executed with the given arguments. If not,
+it will look for a method called `unkown_message:params:` within
+`object`s inheritance chain (as with Ruby's `method_missing`).
 
 Lets look at a more real-world example:
 
@@ -74,8 +74,8 @@ Lets look at a more real-world example:
     }
 
 This peace of code shows a message send to a literal Array consisting
-of the three number values `1`, `2` and `3`. The `each:` method
-expects a `Block` object (or actually, something `callable` - it needs
+of the three number values **1**, **2** and **3**. The `each:` method
+expects a `Block` object (or actually, something *callable* - it needs
 to implement the `call` and `call:` methods). It will `call` the
 argument given to it with each element in the Array.
 
@@ -85,8 +85,8 @@ many more). As in Ruby, anything between the pipes (`|`) are arguments
 to the block and the code between the curly braces is the body of the
 block. Blocks are used as anonymous methods (also called *lambda
 functions*) and *closures* within Fancy. They are first-class values
-in the language, like any other Object, and can be passed around to any
-method. In Fancy all control structures are implemented with
+in the language, like any other Object, and can be passed around to
+any method. In Fancy all control structures are implemented with
 blocks. But we'll get to that in a minute.
 
 First off, let's fully explain that code above. As mentioned, the
@@ -96,11 +96,86 @@ as an **iterator**. In terms of the language, `each:` is just a method
 like any other though.
 
 The `println` send to `x` causes it to be displayed on
-`stdout`. Here's the implementation of `println`:
+`STDOUT`. Here's the implementation of `println`:
 
     def println {
       Console println: (self to_s)
     }
 
 You can find the code in *lib/object.fy* within Fancy's root source
-directory or just [click here](https://github.com/bakkdoor/fancy/blob/master/lib/object.fy#L14) to view it on Github.
+directory or just
+[click here](https://github.com/bakkdoor/fancy/blob/master/lib/object.fy#L14)
+to view it on Github.
+
+
+### Control Structures ###
+
+As mentioned before, Fancy hardly has any built-in control structures
+in contrast to most other programming languages out there. It's
+directly inspired by Smalltalk here in that all the usually built-in
+control flow structures are implemented with *Blocks* and their
+ability to *access variables outside of their scope (and preserve
+them)*.
+
+Let's look at the most common control structures found in other
+programming languages.
+
+
+**If/Else:**
+
+    x < y if_true: {
+      "x is smaller than y" println
+    } else: {
+      "x is NOT smaller than y" println
+    }
+
+The `else:` part can be ommited, as there's also a method `if_true:`
+defined apart from `if_true:else:`. You can also write it the
+following (although longer) way:
+
+    if: (x < y) then: {
+      "x is smaller than y" println
+    } else: {
+      "x is NOT smaller than y" println
+    }
+
+    # there's also this additional way of doing something conditionally:
+
+    { "x is smaller than y" println } if: (x < y)
+
+
+**While:**
+
+    x = 0
+    { x < 10 } while_true: {
+      x println
+      x = x + 1
+    }
+
+    # or:
+
+    x = 0
+    while: { x < 10 } do: {
+      x println
+      x = x + 1
+    }
+
+
+**Endless loop:**
+
+    loop: {
+       # do something here and possibly return when done
+    }
+
+
+**For-loop:**
+
+    10 times: |i| {
+      i println # will print 0 - 9
+    }
+
+    # or:
+
+    0 upto: 9 do_each: |i| {
+      i println # same here.
+    }
