@@ -1,5 +1,5 @@
 # Chapter 01 #
-## What is Fancy ? ##
+## 1.1 What is Fancy ? ##
 
 Fancy is a dynamic, concurrent, pure object-oriented general purpose
 programming language inspired by
@@ -22,7 +22,8 @@ You can view the standard library classes on GitHub
 
 OK, enough said, let's get started with Fancy's basic concepts.
 
-## Basic concepts ##
+
+## 1.2 Basic concepts ##
 
 Fancy is heavily inspired by
 [Smalltalk](http://en.wikipedia.org/wiki/Smalltalk), a pure
@@ -40,7 +41,8 @@ and *reference types*. In Fancy, every value is a *reference type*,
 meaning each argument in a message send in Fancy is passed around as a
 reference (*call by reference semantics*).
 
-### Message Sends ###
+
+### 1.2.1 Message Sends ###
 
 In Fancy nearly all operations are done via *message sends*. While
 Fancy does have syntax for class & method definitions, importing files
@@ -108,7 +110,7 @@ directory or just
 to view it on Github.
 
 
-### Control Structures ###
+### 1.2.2 Control Structures ###
 
 As mentioned before, Fancy hardly has any built-in control structures
 in contrast to most other programming languages out there. It's
