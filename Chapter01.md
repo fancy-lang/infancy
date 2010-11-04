@@ -27,19 +27,21 @@ OK, enough said, let's get started with Fancy's basic concepts.
 
 Fancy is heavily inspired by
 [Smalltalk](http://en.wikipedia.org/wiki/Smalltalk), a pure
-object-oriented, message passing dynamic programming language,
-developed at [XEROX PARC](http://www.parc.com/) in the 1970s and
-1980s.
+object-oriented,
+[message passing](http://en.wikipedia.org/wiki/Message_passing)
+dynamic programming language, developed at
+[XEROX PARC](http://www.parc.com/) in the 1970s and 1980s.
 
 The core idea of Smalltalk (and thus Fancy) is the concept of
-**message sending** (also called *message passing*). Fancy code
-interacts by sending messages to objects and getting responses while
-doing so. You can think of methods as message handlers for incoming
-messages on objects. In Fancy, as in Smalltalk and Ruby, every value
-is an Object. There is no distinction between so-called *value types*
-and *reference types*. In Fancy, every value is a *reference type*,
-meaning each argument in a message send in Fancy is passed around as a
-reference (*call by reference semantics*).
+**message sending** (also called
+[*message passing*](http://en.wikipedia.org/wiki/Message_passing)). Fancy
+code interacts by sending messages to objects and getting responses
+while doing so. You can think of methods as message handlers for
+incoming messages on objects. In Fancy, as in Smalltalk and Ruby,
+every value is an Object. There is no distinction between so-called
+*value types* and *reference types*. In Fancy, every value is a
+*reference type*, meaning each argument in a message send in Fancy is
+passed around as a reference (*call by reference semantics*).
 
 
 ### 1.2.1 Message Sends ###
