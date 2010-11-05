@@ -9,8 +9,8 @@ programming language inspired by
 It runs on [Rubinius](http://www.rubini.us).
 
 The goal is to create a language implementation that is easy to
-understand and improve, even for people new implementing programming
-languages.
+understand and improve, even for people new to implementing
+programming languages.
 
 Fancy's compiler is currently written in Ruby, while all of Fancy's
 standard library is written in Fancy itself. It's a good starting
@@ -51,17 +51,23 @@ Fancy does have syntax for class & method definitions, importing files
 and so on, most of them are just syntactic sugar for equivalent message
 sends to objects.
 
-Let's have a look at how this looks syntactically:
+Let's have a look at how this looks syntactically.
+
+**No arguments:**
+
+    object message_name
+
+**Single argument:**
 
     object message_name: arg
 
 Is a message send to `object` with a message called `message_name:`
 and an argument `arg`. As in Smalltalk (or Objective-C, which is
 inspired by Smalltalk), messages are keyword-based and so are
-methods. So if you have multiple arguments in a message send, each
+methods. So, if you have multiple arguments in a message send, each
 argument is preceeded by a keyword (usually describing the argument).
 
-Multiple arguments:
+**Multiple arguments:**
 
     object foo: arg1 bar: arg2 baz: arg3
 
@@ -79,17 +85,17 @@ Lets look at a more real-world example:
 
 This peace of code shows a message send to a literal Array consisting
 of the three number values **1**, **2** and **3**. The `each:` method
-expects a `Block` object (or actually, something *callable* - it needs
-to implement the `call` and `call:` methods). It will `call` the
+expects a **Block** object (or actually, something *callable* - it needs
+to implement the `call` and `call:` methods). It will `call:` the
 argument given to it with each element in the Array.
 
 The `|x| { x println }` thing is a Block literal. Blocks are just
-normal objects but with a built-in syntax (like strings, numbers and
-many more). As in Ruby, anything between the pipes (`|`) are arguments
+normal objects but with built-in syntax (like strings, numbers and
+many more). As in Ruby, anything between the pipes (`||`) are arguments
 to the block and the code between the curly braces is the body of the
-block. Blocks are used as anonymous methods (also called *lambda
+block. Blocks are used as *anonymous methods* (also called *lambda
 functions*) and *closures* within Fancy. They are first-class values
-in the language, like any other Object, and can be passed around to
+in the language, like any other object, and can be passed around to
 any method. In Fancy all control structures are implemented with
 blocks. But we'll get to that in a minute.
 
