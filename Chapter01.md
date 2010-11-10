@@ -189,3 +189,6 @@ following (although longer) way:
     0 upto: 9 do_each: |i| {
       i println # same here.
     }
+
+
+#### In the next chapter, we'll have a look how class & method definitions work in Fancy. ####
