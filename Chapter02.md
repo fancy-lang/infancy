@@ -105,3 +105,91 @@ keeping the rest of the name. E.g. for an instance method called
 passes all the arguments on to the `initialize` method.
 
 ### 2.2.2 Slot readers & writers ###
+
+There's a simpler way to define so-called *getter-* and
+*setter-methods* in Fancy:
+
+    class Person {
+      # define getter-methods:
+      read_slots: ['name, 'age, 'city]
+
+      # or if, you'd want them all to be writable:
+      write_slots: ['name, 'age, 'city]
+
+      # or define both getter & setter methods:
+      read_write_slots: ['name, 'age, 'city]
+    }
+
+We usually refer to *instance variables* as ***slots*** within
+Fancy. It's just a different name, but they refer to the exact same
+thing.
+
+`read_slots:` defines reader methods for all the slotnames within a
+given Array. `write_slots:` defines setter methods for the slotnames
+in a given Array. `read_write_slots:` does both at once. These methods
+are completely defined in Fancy and can be found in the `Class` class
+definition in Fancy's standard library.
+
+### 2.2.3 More syntactic sugar ###
+
+OK, let's have a look at some more nice syntactic features Fancy
+provides for common idioms in method definitions.
+First, let's have a look at all the code for the `Person` class we've
+written so far. We'll modify it a little to have multiple constructor
+methods to emulate default arguments for the missing arguments:
+
+    class Person {
+      def initialize: name {
+        initialize: name age: "John Doe" # default is "John Doe"
+      }
+
+      def initialize: name age: age {
+        initialize: name age: age city: "New York" # default is "New York"
+      }
+
+      def initialize: name age: age city: city {
+        @name = name
+        @age = age
+        @city = city
+      }
+
+      # slot readers
+
+      def name {
+        @name
+      }
+
+      def age {
+        @age
+      }
+
+      def city {
+        @city
+      }
+
+      # let's also define slot writer methods:
+
+      def name: new_name {
+        @name = new_name
+      }
+
+      def age: new_age {
+        @age = new_age
+      }
+
+      def city: new_city {
+        @city = new_city
+      }
+    }
+
+OK, and now let's define the same stuff with some standard helper
+methods and syntax sugar:
+
+    class Person {
+      read_write_slots: ['name, 'age, 'city]
+
+      def initialize: @name age: @age ("John Doe") city: @city ("New York") {
+      }
+    }
+
+Yup, that's it. =)
