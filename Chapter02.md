@@ -140,7 +140,7 @@ methods to emulate default arguments for the missing arguments:
 
     class Person {
       def initialize: name {
-        initialize: name age: "John Doe" # default is "John Doe"
+        initialize: name age: 42 # default is 42
       }
 
       def initialize: name age: age {
@@ -188,7 +188,7 @@ methods and syntax sugar:
     class Person {
       read_write_slots: ['name, 'age, 'city]
 
-      def initialize: @name age: @age ("John Doe") city: @city ("New York") {
+      def initialize: @name age: @age (42) city: @city ("New York") {
       }
     }
 
