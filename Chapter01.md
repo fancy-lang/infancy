@@ -72,10 +72,11 @@ argument is preceeded by a keyword (usually describing the argument).
     object foo: arg1 bar: arg2 baz: arg3
 
 The above shows a message send with three arguments for the
-`foo:bar:baz:` message. If `object` or its class define a method with
-the same name, it will get executed with the given arguments. If not,
-it will look for a method called `unkown_message:params:` within
-`object`s inheritance chain (as with Ruby's `method_missing`).
+`foo:bar:baz:` message. If `object`, its class or any superclass
+defines a method with the same name, it will get executed with the
+given arguments. If not, it will look for a method called
+`unkown_message:params:` within `object`s inheritance chain (as with
+Ruby's `method_missing`).
 
 Lets look at a more real-world example:
 
