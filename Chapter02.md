@@ -193,3 +193,25 @@ methods and syntax sugar:
     }
 
 Yup, that's it. =)
+What's happening here is we're defining getter & setter methods for
+the slots `@name, @age` and `@city` and use Fancy's auto slot assignment
+syntax in the constructor method, which sets the slot with the given
+name to the value passed in as the argument. Finally, we're also using
+default argument values (any expression within `(` and `)`). Note,
+that you're allowed to refer to arguments passed in further left as
+default arguments further right.
+
+For example:
+
+    def hello: name1 and: name2 (name1) {
+      "Hello, #{name1} and #{name2}!" println
+    }
+
+    # call with both arguments:
+    hello: "Robert" and: "Meggie" # prints "Hello, Robert and Meggie!"
+
+    # call with one argument:
+    hello: "Max" # prints "Hello, Max and Max!"
+
+
+#### The next chapter will introduce some built-in classes with literal support commonly used in the language. ####
