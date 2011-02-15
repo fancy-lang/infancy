@@ -44,7 +44,7 @@ Fancy also has support for Ruby-like string interpolation:
 
 ## 3.3 Symbols ##
 
-Symbols are unique identifiers. They equivalent to Ruby's Symbols.
+Symbols are unique identifiers. They're equivalent to Ruby's Symbols.
 
 Examples:
 
