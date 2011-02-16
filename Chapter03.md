@@ -109,7 +109,32 @@ We've seen Blocks in Chapter 1 before, but for completeness, here's a list of so
     # Seperating arguments with comma is optional, thus this is valid as well:
     |x, y| { "The sum is: #{x + y}" println }
 
+There's also *Partial Blocks* which can be used for Blocks only taking
+one argument:
+
+    @{ + 1 } # is the same as: |x| { x + 1 }
+    # e.g.:
+    [1,2,3,4] map: @{+ 1} # => [2,3,4,5]
+
 To `call` a Block, you send it the `call` or `call:` message and pass the arguments in as an Array:
 
     block = |x, y| { x + y println }
     block call: [2, 3] # will print 5
+
+## 3.8 Regular Expressions ##
+
+Fancy, as Ruby or Perl, has Regular Expressions built-in to the
+language. In fact, it uses the same implementation that Ruby uses on
+top of Rubinius, including the same literal syntax:
+
+    /^Hello, (.*)!$/
+    /^[A-Z][a-Z0-9_:]$/
+
+
+## 3.9 Ranges ##
+
+Fancy also has Ranges, like Ruby:
+
+    (1..10)
+    (a..b)
+    (x .. x ** x)
