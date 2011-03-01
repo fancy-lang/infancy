@@ -8,7 +8,7 @@ Classes in Fancy are first-class values (they are instances of the
 There's several ways to define Classes in Fancy, but the common one is
 to use the built-in syntax for it. Compared to Smalltalk, where class
 definitions are just message sends as well, Fancy also provides syntax
-for doing so, just as Ruby and most other object-orientd programming
+for doing so, just as Ruby and most other object-oriented programming
 languages out there.
 
     class Person {
