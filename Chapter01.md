@@ -192,4 +192,6 @@ following (although longer) way:
     }
 
 
-#### In the next chapter, we'll have a look how class & method definitions work in Fancy. ####
+#### In [Chapter 2][], we'll have a look how class & method definitions work in Fancy. ####
+
+  [Chapter 2]: Chapter02.md
