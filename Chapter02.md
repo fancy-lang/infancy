@@ -214,4 +214,6 @@ For example:
     hello: "Max" # prints "Hello, Max and Max!"
 
 
-#### The next chapter will introduce some built-in classes with literal support commonly used in the language. ####
+#### The [next chapter][Chapter 3] will introduce some built-in classes with literal support commonly used in the language. ####
+
+  [Chapter 3]: Chapter03.md
