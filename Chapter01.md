@@ -55,11 +55,15 @@ Let's have a look at how this looks syntactically.
 
 **No arguments:**
 
-    object message_name
+```fancy
+object message_name
+```
 
 **Single argument:**
 
-    object message_name: arg
+```fancy
+object message_name: arg
+```
 
 Is a message send to `object` with a message called `message_name:`
 and an argument `arg`. As in Smalltalk (or Objective-C, which is
@@ -69,7 +73,9 @@ argument is preceeded by a keyword (usually describing the argument).
 
 **Multiple arguments:**
 
-    object foo: arg1 bar: arg2 baz: arg3
+```fancy
+object foo: arg1 bar: arg2 baz: arg3
+```
 
 The above shows a message send with three arguments for the
 `foo:bar:baz:` message. If `object`, its class or any superclass
@@ -80,9 +86,11 @@ Ruby's `method_missing`).
 
 Lets look at a more real-world example:
 
-    [1,2,3] each: |x| {
-      x println
-    }
+```fancy
+[1,2,3] each: |x| {
+  x println
+}
+```
 
 This peace of code shows a message send to a literal Array consisting
 of the three number values **1**, **2** and **3**. The `each:` method
@@ -109,9 +117,11 @@ like any other though.
 The `println` send to `x` causes it to be displayed on
 `STDOUT`. Here's the implementation of `println`:
 
-    def println {
-      Console println: (self to_s)
-    }
+```fancy
+def println {
+  Console println: (self to_s)
+}
+```
 
 You can find the code in *lib/object.fy* within Fancy's root source
 directory or just
@@ -134,62 +144,71 @@ programming languages.
 
 **If/Else:**
 
-    x < y if_true: {
-      "x is smaller than y" println
-    } else: {
-      "x is NOT smaller than y" println
-    }
+```fancy
+x < y if_true: {
+  "x is smaller than y" println
+} else: {
+  "x is NOT smaller than y" println
+}
+```
 
 The `else:` part can be ommited, as there's also a method `if_true:`
 defined apart from `if_true:else:`. You can also write it the
 following (although longer) way:
 
-    if: (x < y) then: {
-      "x is smaller than y" println
-    } else: {
-      "x is NOT smaller than y" println
-    }
+```fancy
+if: (x < y) then: {
+  "x is smaller than y" println
+} else: {
+  "x is NOT smaller than y" println
+}
 
-    # there's also this additional way of doing something conditionally:
+# there's also this additional way of doing something conditionally:
 
-    { "x is smaller than y" println } if: (x < y)
+{ "x is smaller than y" println } if: (x < y)
+```
 
 
 **While:**
 
-    x = 0
-    { x < 10 } while_true: {
-      x println
-      x = x + 1
-    }
+```fancy
+x = 0
+{ x < 10 } while_true: {
+  x println
+  x = x + 1
+}
 
-    # or:
+# or:
 
-    x = 0
-    while: { x < 10 } do: {
-      x println
-      x = x + 1
-    }
+x = 0
+while: { x < 10 } do: {
+  x println
+  x = x + 1
+}
+```
 
 
 **Endless loop:**
 
-    loop: {
-       # do something here and possibly return when done
-    }
-
+```fancy
+loop: {
+   # do something here and possibly return when done
+}
+```
 
 **For-loop:**
 
-    10 times: |i| {
-      i println # will print 0 - 9
-    }
+```fancy
+10 times: |i| {
+  i println # will print 0 - 9
+}
 
-    # or:
+# or:
 
-    0 upto: 9 do_each: |i| {
-      i println # same here.
-    }
+0 upto: 9 do_each: |i| {
+  i println # same here.
+}
+```
 
 
 #### In [Chapter 2][], we'll have a look how class & method definitions work in Fancy. ####
