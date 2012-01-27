@@ -161,3 +161,7 @@ Fancy also has Ranges, like Ruby:
 (a..b)
 (x .. x ** x)
 ```
+
+#### [Chapter 4][Chapter 4] will deal with one of Fancy's central features, namely Blocks, some more. ####
+
+  [Chapter 4]: Chapter04.md
