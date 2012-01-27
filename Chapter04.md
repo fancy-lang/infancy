@@ -40,9 +40,7 @@ html = HTML new: |h| {
     }
     h body: |h| {
       h div: { id: "header" } with: |h| {
-        h h1: |h| {
-          h title: { class: "title" } with: "My Title"
-        }
+        h h1: { class: "title" } with: "My Title"
       }
       h div: { id: "footer" } with: |h| {
         h h3: "The End."
@@ -57,16 +55,14 @@ html = HTML new: |h| {
 ```fancy
 require: "html"
 
-html = HTML new: @{
+html2 = HTML new: @{
   html: @{
     head: @{
       title: "Using HTML Class"
     }
     body: @{
       div: { id: "header" } with: @{
-        h1: @{
-          title: { class: "title" } with: "My Title"
-        }
+        h1: { class: "title" } with: "My Title"
       }
       div: { id: "footer" } with: @{
         h3: "The End."
@@ -87,10 +83,8 @@ Both code snippets will produce this output:
   </head>
   <body>
     <div id="header">
-      <h1>
-        <title class="title">
-          My Title
-        </title>
+      <h1 class="title">
+        My Title
       </h1>
     </div>
     <div id="footer">
@@ -101,3 +95,8 @@ Both code snippets will produce this output:
   </body>
 </html>
 ```
+
+Since Partial Blocks preserve the meaning of self, you can use the
+HTML generator class for your view code and don't need to use a
+seperate template language, as all instance variables will be bound
+nicely, depending on where you put that code.
