@@ -50,7 +50,7 @@ html = HTML new: |h| {
 }
 ```
 
-### 4.2.2 And the same code with Patial Blocks ###
+### 4.2.2 And the same code with Partial Blocks ###
 
 ```fancy
 require: "html"
