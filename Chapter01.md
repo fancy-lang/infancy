@@ -125,7 +125,7 @@ def println {
 
 You can find the code in *lib/object.fy* within Fancy's root source
 directory or just
-[click here](https://github.com/bakkdoor/fancy/blob/master/lib/object.fy#L14)
+[click here](https://github.com/bakkdoor/fancy/blob/master/lib/object.fy#L29)
 to view it on Github.
 
 
