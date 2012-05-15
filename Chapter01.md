@@ -39,9 +39,7 @@ code interacts by sending messages to objects and getting responses
 while doing so. You can think of methods as message handlers for
 incoming messages on objects. In Fancy, as in Smalltalk and Ruby,
 every value is an Object. There is no distinction between so-called
-*value types* and *reference types*. In Fancy, every value is a
-*reference type*, meaning each argument in a message send in Fancy is
-passed around as a reference (*call by reference semantics*).
+*value types* (or *primitive types*)  and *reference types*.
 
 
 ### 1.2.1 Message Sends ###
@@ -81,7 +79,7 @@ The above shows a message send with three arguments for the
 `foo:bar:baz:` message. If `object`, its class or any superclass
 defines a method with the same name, it will get executed with the
 given arguments. If not, it will look for a method called
-`unkown_message:params:` within `object`s inheritance chain (as with
+`unknown_message:with_params:` within `object`s inheritance chain (as with
 Ruby's `method_missing`).
 
 Lets look at a more real-world example:
