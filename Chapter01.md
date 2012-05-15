@@ -113,11 +113,13 @@ as an **iterator**. In terms of the language, `each:` is just a method
 like any other though.
 
 The `println` send to `x` causes it to be displayed on
-`STDOUT`. Here's the implementation of `println`:
+`*stdout*`. Here's the implementation of `println`:
 
 ```fancy
 def println {
-  Console println: (self to_s)
+  # *stdout* is a dynamic variable
+  # we'll discuss these later in detail
+  *stdout* println: to_s
 }
 ```
 
