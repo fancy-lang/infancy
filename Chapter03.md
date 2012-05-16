@@ -81,7 +81,7 @@ Examples:
 
 ## 3.5 Arrays ##
 
-One of the most used data structures are lists and arrays. In Fancy there's the `Array` class which provides index-based constant time access to dynamically resizable (growing) polymorphic containers.
+One of the most used data structure are arrays. In Fancy there's the `Array` class which provides index-based constant time access to dynamically resizable (growing) polymorphic containers.
 Let's have a look at some `Array` examples:
 
 ```fancy
