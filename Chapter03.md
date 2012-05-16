@@ -42,7 +42,7 @@ Fancy also has support for Ruby-like string interpolation:
 
 ```fancy
 "This is a String with a value interpolated: 3 ** 3 = #{3 ** 3}"
-"Hello, #{name}, I'm #{self age} years old."
+"Hello, #{name}, I'm #{age} years old."
 ```
 
 ## 3.3 Symbols ##
