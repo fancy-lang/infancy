@@ -205,7 +205,7 @@ loop: {
 
 # or:
 
-0 upto: 9 do_each: |i| {
+0 upto: 9 do: |i| {
   i println # same here.
 }
 ```
