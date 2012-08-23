@@ -90,7 +90,7 @@ Lets look at a more real-world example:
 }
 ```
 
-This peace of code shows a message send to a literal Array consisting
+This piece of code shows a message send to a literal Array consisting
 of the three number values **1**, **2** and **3**. The `each:` method
 expects a **Block** object (or actually, something *callable* - it needs
 to implement the `call` and `call:` methods). It will `call:` the
