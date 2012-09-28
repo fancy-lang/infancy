@@ -12,8 +12,9 @@ The goal is to create a language implementation that is easy to
 understand and improve, even for people new to implementing
 programming languages.
 
-Fancy's compiler is currently written in Ruby, while all of Fancy's
-standard library is written in Fancy itself. It's a good starting
+Fancy is a self-hosted language. That means, its compiler is written
+in Fancy itself. Apart from the compiler, Fancy's standard library is
+mostly written in Fancy, too. The standard library is a good starting
 point if you want to get a better feel for the language and its
 built-in classes and methods, once you've mastered the fundamental
 semantics and syntax.
