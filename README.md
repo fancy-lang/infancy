@@ -8,4 +8,4 @@ gives a short introduction into Fancy's basic concepts and ideas.
 
 # [Start reading →][Chapter01.md]
 
-  [Chapter01.md]: infancy/blob/master/Chapter01.md
+  [Chapter01.md]: Chapter01.md
