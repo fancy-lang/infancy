@@ -98,6 +98,10 @@ class Person {
     @city = city
   }
 
+  def name {
+    @name
+  }
+
   def age {
     @age
   }
